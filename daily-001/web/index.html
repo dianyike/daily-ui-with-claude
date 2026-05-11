@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily UI 001 — Sign Up</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="signup">
+    <section class="media-panel" aria-label="Brand atmosphere">
+      <header class="metadata">
+        <span class="meta-left">DAILY UI ／ 001</span>
+        <span class="meta-right">ISSUE — MAY 2026</span>
+      </header>
+
+      <figure class="photo-plate" aria-label="Placeholder for full-bleed imagery"></figure>
+
+      <footer class="caption-block">
+        <p class="plate-label">PLATE 01 · DAYBREAK</p>
+        <hr class="hairline" aria-hidden="true">
+        <p class="caption">在能交出資料前，<br>先讓一段安靜停留。</p>
+      </footer>
+    </section>
+
+    <section class="form-panel" aria-label="Sign up form">
+      <form class="form-inner" id="signup-form" novalidate>
+        <p class="eyebrow">01 ／ 開立帳號</p>
+        <h1 class="title">成為會員。</h1>
+        <p class="subtitle">三十秒，三個欄位。沒有第四個。</p>
+        <hr class="hairline-short" aria-hidden="true">
+
+        <div class="form-group">
+          <div class="field">
+            <label for="name">姓名 NAME</label>
+            <input id="name" name="name" type="text" placeholder="王典億" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">信箱 EMAIL</label>
+            <input id="email" name="email" type="email" placeholder="you@studio.com" autocomplete="email" required>
+            <span class="hint" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="password">密碼 PASSWORD</label>
+            <input id="password" name="password" type="password" placeholder="至少八個字符" autocomplete="new-password" minlength="8" required>
+          </div>
+        </div>
+
+        <button type="submit" class="cta">
+          <span class="cta-label">繼續</span>
+          <span class="cta-arrow" aria-hidden="true">→</span>
+        </button>
+
+        <p class="footer-note">
+          已經是會員？ <a href="#login">登入 →</a>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

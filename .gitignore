@@ -1,0 +1,20 @@
+# Claude Code workspace — local agent state, not part of the portfolio
+.claude/
+.mcp.json
+CLAUDE.md
+
+# macOS
+.DS_Store
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+*~
+
+# Node (in case any daily-XXX/web/ grows into a npm project)
+node_modules/
+dist/
+build/
+.cache/
+*.log

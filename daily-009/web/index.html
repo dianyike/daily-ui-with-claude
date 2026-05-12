@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-theme="crt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily UI 009 — Music Player · BVE-9000</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Noto+Sans+TC:wght@400;500&family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="overlay-scanlines" aria-hidden="true"></div>
+  <div class="overlay-flicker" aria-hidden="true"></div>
+
+  <main class="player" id="js-player">
+
+    <header class="top-strip">
+      <div class="on-air">
+        <span class="dot" aria-hidden="true"></span>
+        <span>ON AIR</span>
+      </div>
+      <span class="muted hide-mobile">CH-1/2 · STEREO · 48kHz</span>
+      <span class="muted hide-mobile">TX-LOCK <span class="signal-dots" aria-label="signal lock indicator">●●●●●●●●○○</span></span>
+      <span class="grow"></span>
+      <span class="peak hide-mobile">PEAK <span id="js-peak">-0.3</span> dB</span>
+      <time class="timestamp" id="js-timestamp" datetime="1986-05-12T23:47:13+09:00">23:47:13 JST · 1986-05-12</time>
+    </header>
+
+    <section class="body">
+
+      <!-- SPECTRUM HERO -->
+      <section class="cell spectrum" aria-label="Spectrum analyzer">
+        <header class="cell-head">
+          <span class="label">SPECTRUM ANALYZER · <span class="bar-count">32</span>-BAND · L/R DUAL</span>
+          <span class="grow"></span>
+          <span class="db-scale muted hide-mobile">-60   -40   -20   -12   -6   -3   0 dB</span>
+        </header>
+        <div class="bar-row" id="js-spectrum-bars" aria-hidden="true"></div>
+      </section>
+
+      <section class="content-row">
+
+        <!-- NOW PLAYING -->
+        <article class="cell now-playing">
+          <div class="sleeve" aria-hidden="true">
+            <span class="side-marker">SIDE B</span>
+            <span class="ring r1"></span>
+            <span class="ring r2"></span>
+            <span class="ring r3"></span>
+            <span class="ring r4"></span>
+            <span class="center-dot"></span>
+            <span class="crosshair-h"></span>
+            <span class="crosshair-v"></span>
+          </div>
+          <div class="meta">
+            <span class="eyebrow muted">NOW PLAYING / 03 OF 09</span>
+            <h1 class="title-en">PLASTIC<br>LOVE</h1>
+            <span class="title-ja muted">プラスティック・ラブ</span>
+            <hr class="hairline">
+            <span class="artist">竹内まりや</span>
+            <span class="album-line muted">VARIETY · 1984<br>MOON RECORDS · MOON-28018</span>
+            <span class="grow"></span>
+            <div class="runtime-block">
+              <span class="muted small">RUNTIME · BPM · KEY</span>
+              <span class="runtime-val">06:18  ·  108  ·  Am</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- TRACK LIST -->
+        <article class="cell track-list" aria-label="Side B track list">
+          <header class="cell-head">
+            <span class="label">SIDE B · 9 TRACKS</span>
+            <span class="grow"></span>
+            <span class="muted runtime">28:42</span>
+          </header>
+          <hr class="hairline">
+          <ol class="tracks" id="js-track-list">
+            <li data-i="1"><span class="num">01</span><span class="title">MIZUIRO NO AME</span><span class="grow"></span><span class="dur">04:12</span></li>
+            <li data-i="2"><span class="num">02</span><span class="title">STEP INTO LIGHT</span><span class="grow"></span><span class="dur">03:58</span></li>
+            <li data-i="3" class="current"><span class="num">03</span><span class="title">PLASTIC LOVE</span><span class="grow"></span><span class="dur">06:18</span></li>
+            <li data-i="4"><span class="num">04</span><span class="title">YUMEJI</span><span class="grow"></span><span class="dur">03:45</span></li>
+            <li data-i="5"><span class="num">05</span><span class="title">HONKI DE ONLY YOU</span><span class="grow"></span><span class="dur">04:01</span></li>
+            <li data-i="6" class="hide-mobile"><span class="num">06</span><span class="title">MOU ICHIDO</span><span class="grow"></span><span class="dur">03:22</span></li>
+            <li data-i="7" class="hide-mobile"><span class="num">07</span><span class="title">MAGIC WAYS</span><span class="grow"></span><span class="dur">03:34</span></li>
+            <li data-i="8" class="hide-mobile"><span class="num">08</span><span class="title">BROKEN HEART</span><span class="grow"></span><span class="dur">04:28</span></li>
+            <li data-i="9" class="hide-mobile"><span class="num">09</span><span class="title">VARIETY</span><span class="grow"></span><span class="dur">05:14</span></li>
+            <li class="more-tracks show-mobile" aria-hidden="true">+ 4 MORE TRACKS</li>
+          </ol>
+        </article>
+
+        <!-- VU + TIMECODE -->
+        <aside class="cell vu-column" aria-label="VU meters and timecode">
+          <span class="label">VU METER · L / R</span>
+          <div class="vu" data-ch="L">
+            <span class="ch-label muted">L</span>
+            <div class="vu-scale" aria-hidden="true">
+              <span class="tick" style="--p:0.00">-20</span>
+              <span class="tick" style="--p:0.25">-10</span>
+              <span class="tick" style="--p:0.42">-7</span>
+              <span class="tick" style="--p:0.55">-5</span>
+              <span class="tick" style="--p:0.68">-3</span>
+              <span class="tick red" style="--p:0.82">0</span>
+              <span class="tick red" style="--p:0.95">+3</span>
+            </div>
+            <div class="vu-bar">
+              <span class="vu-fill" id="js-vu-l-fill"></span>
+              <span class="vu-peak" id="js-vu-l-peak"></span>
+            </div>
+            <span class="db-readout" id="js-vu-l-db">-1.2 dB</span>
+          </div>
+          <div class="vu" data-ch="R">
+            <span class="ch-label muted">R</span>
+            <div class="vu-scale" aria-hidden="true">
+              <span class="tick" style="--p:0.00">-20</span>
+              <span class="tick" style="--p:0.25">-10</span>
+              <span class="tick" style="--p:0.42">-7</span>
+              <span class="tick" style="--p:0.55">-5</span>
+              <span class="tick" style="--p:0.68">-3</span>
+              <span class="tick red" style="--p:0.82">0</span>
+              <span class="tick red" style="--p:0.95">+3</span>
+            </div>
+            <div class="vu-bar">
+              <span class="vu-fill" id="js-vu-r-fill"></span>
+              <span class="vu-peak" id="js-vu-r-peak"></span>
+            </div>
+            <span class="db-readout" id="js-vu-r-db">+1.2 dB</span>
+          </div>
+          <div class="timecode">
+            <span class="muted small">TIMECODE · ELAPSED / REMAIN</span>
+            <div class="timecode-nums">
+              <span class="elapsed" id="js-elapsed">03:42</span>
+              <span class="grow"></span>
+              <span class="remaining muted" id="js-remain">-02:36</span>
+            </div>
+            <div class="progress" role="progressbar" aria-valuenow="59" aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-fill" id="js-progress"></span>
+              <span class="progress-cursor" id="js-cursor"></span>
+            </div>
+          </div>
+        </aside>
+
+      </section>
+
+      <!-- TRANSPORT -->
+      <section class="transport" aria-label="Playback controls">
+        <div class="playback-group">
+          <button class="transport-btn hide-mobile" data-role="rewind" aria-label="Rewind">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="2" height="12"/><polygon points="15,6 7,12 15,18"/><polygon points="22,6 14,12 22,18"/></svg>
+          </button>
+          <button class="transport-btn" data-role="prev" aria-label="Previous track">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="6" width="2" height="12"/><polygon points="20,6 9,12 20,18"/></svg>
+          </button>
+          <button class="transport-btn play" data-role="play" id="js-play" aria-label="Play or pause" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-play"><polygon points="6,4 20,12 6,20"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-pause"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </button>
+          <button class="transport-btn" data-role="next" aria-label="Next track">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="4,6 15,12 4,18"/><rect x="17" y="6" width="2" height="12"/></svg>
+          </button>
+          <button class="transport-btn hide-mobile" data-role="fastforward" aria-label="Fast forward">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="2,6 10,12 2,18"/><polygon points="9,6 17,12 9,18"/><rect x="19" y="6" width="2" height="12"/></svg>
+          </button>
+        </div>
+        <div class="toggle-group">
+          <button class="toggle" data-on="true" aria-pressed="true"><span class="dot"></span>REPEAT B</button>
+          <button class="toggle" data-on="false" aria-pressed="false"><span class="dot"></span>SHUFFLE</button>
+          <button class="toggle hide-mobile" data-on="true" aria-pressed="true"><span class="dot"></span>LIMITER</button>
+        </div>
+        <span class="grow hide-mobile"></span>
+        <div class="volume-group hide-mobile">
+          <span class="muted small">MONITOR  ·  <span id="js-vol-num">24</span> / 32</span>
+          <div class="volume-bars" id="js-volume-bars" aria-hidden="true"></div>
+        </div>
+      </section>
+
+    </section>
+
+    <footer class="bottom-strip">
+      <span class="muted">STUDIO 13 · BVE-9000 · NS-1000M</span>
+      <span class="grow"></span>
+      <span class="faint hide-mobile">© 1986 MOONLIGHT BROADCASTING CORP. — DAILY UI 009</span>
+      <span class="faint show-mobile">DAILY UI 009</span>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

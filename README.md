@@ -17,7 +17,8 @@
 | 006 | User Profile | Ticker Biography — 編年人物特寫（左彩色 editorial portrait + 右橫向時間軸 4 節點 + NOW ◉ 唯一 accent + EB Garamond Italic pull quote） | [`91:2`](https://www.figma.com/design/bDA9MWzNRM9My6grhlE8fj/daily-UI-100?node-id=91-2) |
 | 007 | Settings | Account Ledger — 雙欄記帳本（dot-leader 點線串連 label→value · Roman I/II/III 章節 · 每節 EB Garamond Italic margin note · Apply「簽署」CTA 唯一 accent） | [`107:2`](https://www.figma.com/design/bDA9MWzNRM9My6grhlE8fj/daily-UI-100?node-id=107-2) |
 | 008 | 404 Page | A Small Disappearance — 4 格漫畫敘事（`click → fall → wander → home`）· Stick-figure 反 mascot 線稿（DALL·E 生成 + pre-crop 移除 AI 自畫的 panel 框）· Restrained accent 限定 Panel 04 narrative-resolution + CTA arrow · Editorial CTA = arrow + text-link 取代 SaaS pill button | [`117:2`](https://www.figma.com/design/bDA9MWzNRM9My6grhlE8fj/daily-UI-100?node-id=117-2) |
-| 003 · 009 – 100 | … | 進行中 | — |
+| 009 | Music Player | 1986 Tokyo Broadcast Control Room — Bento Asymmetric（Spectrum hero + NowPlaying / TrackList / VUColumn cells）· Drenched 單一磷光綠色相 + amber alarm-only accent · IBM Plex Mono + VT323 bitmap + Noto Sans TC 三角色 mono-type 系統 · 場景 anchored on Mariya Takeuchi《Variety》1984 + Sony BVE-9000 + Yamaha NS-1000M（繞開 Miami sunset synthwave 模板）· Local `Daily009-Scene` 變數集承接 phosphor palette override（Q4 escape hatch，0 token drift） | [`152:10`](https://www.figma.com/design/bDA9MWzNRM9My6grhlE8fj/daily-UI-100?node-id=152-10) |
+| 003 · 010 – 100 | … | 進行中 | — |
 
 ---
 
@@ -91,6 +92,7 @@ Frame 命名慣例：`Daily 001 — Sign Up - 1440`、`Daily 002 — Credit Card
 | 006 | Portrait-as-anchor + 軌跡橫向延伸 雙主體版式 · 時間單向性用「過去 outline ● → NOW solid ◉」填色狀態切換 · 真實 metadata（Joined / Based）取代 cosplay 座標 · imageFilters saturation 微調 editorial（zh-TW context 永不 full b/w — feedback memory `feedback_no_bw_portraits_zh.md`） | 任何「人 × 軌跡」profile / about / team / case-study 對開頁版式 / 需要時間單向性的可視化 / 編輯式 portrait page |
 | 007 | Dot-leader 點線連接 label→value（Figma `createLine() + dashPattern [1, 5]`、web `border-bottom: dotted` + baseline 對齊）· Roman 章節編號 + Italic margin note 「編輯旁白」紀律 · Audit footer 真實 review metadata（不裝高級）· Accent atomic uses = 1（Apply 唯一)— 系列最克制 | 任何 form-as-document / 合約 / 章程 / 訂閱頁 / 設定頁 / 表格式內容需要「印刷頁」氣質而非 SaaS list 慣性 |
 | 008 | Sequential 4-panel comic strip 用 Cinematic Scroll archetype（scroll = 揭示 = 時序敘事的工具）· Stick-figure 反 mascot 線稿（具體 = 規避 friendly-mascot 陷阱）· Accent budget = 1 reserved 顏色 + 1 region（橘紅鎖在 narrative-resolution beat，看到色 = 看到出口）· Editorial CTA = arrow + text-link 取代 SaaS pill button · Chrome regions 各自承擔不同 job（top plate = identity / footer = system signal，永不重複同一 fact）· AI illustration hand-off 紀律（DALL·E prompt 共用 style baseline + 同 seed + pre-crop 移除 AI 自畫框） | 任何 sequential storytelling / multi-beat reveal / 中斷或錯誤狀態頁（404 / maintenance / empty state）/ 需要 character-driven 但要避開 Memoji-Dropbox 陷阱的場合 |
+| 009 | Scene-shift 繞開 trending 美學模板（80s synthwave → 1986 Tokyo broadcast control room，具名場景強迫每個元件落入位）· Drenched 單一色相 palette + 單一 alarm accent（看到 amber = 看到警示／主動，accent 自帶語意）· Segmented-LED bars 取代 smooth gradient（廣播機房 LED 階梯感）· Mixed mono-type 系統三角色（IBM Plex Mono 工程 + VT323 CRT bitmap + Noto Sans TC CJK）· Geometric icons 手畫不用 unicode glyph（避免跨字體 emoji 渲染差異）· Local scene variable collection（Q4 escape hatch）支援 scene-specific palette override 同時保留 100% token discipline | 任何 retro / trending 美學避坑（80s / Y2K / vapor / brutalist）／ 工程感儀表板 / 控制面板 / 高密度 data-as-protagonist 介面 / 需要 motion 為主角的編輯式應用（spectrum / 即時儀表 / waveform）／ 多語系並置工程 callouts 場景 |
 
 ---
 

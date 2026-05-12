@@ -1,0 +1,529 @@
+/* =====================================================================
+   Daily UI 010 — Social Share · 明信片郵戳
+   Tokens: minimal-ds (36) — Light mode (vellum paper + deep ink + stamp red).
+   Editorial archetype: Layered Overlap. Anti-goals: SaaS bouncy, neon glow,
+   gradient sweeps, Notion emoji row, Etsy crafty stickers.
+   ===================================================================== */
+
+:root,
+[data-theme='light'] {
+  /* ---- color (8) — Light mode ---- */
+  --color-bg:        rgb(255 255 255);  /* paper margin */
+  --color-fg:        rgb(10 10 10);     /* deep ink */
+  --color-accent:    rgb(255 69 0);     /* cancellation ink red */
+  --color-border:    rgb(229 229 229);  /* hairline */
+  --color-bg-alt:    rgb(245 245 245);  /* vellum card surface */
+  --color-fg-muted:  rgb(115 115 115);  /* faded ink */
+  --color-accent-fg: rgb(255 255 255);  /* on accent */
+  --color-surface:   rgb(250 250 250);  /* offset surface */
+
+  /* ---- typography family (proxies for the bound DS variables) ---- */
+  --family-latin:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --family-cjk:      'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  --family-mono:     'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* ---- text sizes (5) ---- */
+  --text-display: 44px;
+  --text-h1:      28px;
+  --text-h2:      18px;
+  --text-body:    13px;
+  --text-caption: 11px;
+
+  /* ---- weight (3) ---- */
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-bold:    700;
+
+  /* ---- leading (2) ---- */
+  --leading-tight: 110%;
+  --leading-loose: 150%;
+
+  /* ---- space (6, 4pt scale) ---- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  /* ---- radius (3) ---- */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+
+  /* ---- max-w (4) ---- */
+  --max-w-xs:  480px;
+  --max-w-sm:  720px;
+  --max-w-md: 1024px;
+  --max-w-lg: 1440px;
+
+  /* ---- breakpoints (3) ---- */
+  --bp-sm: 480px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+
+  color-scheme: light;
+}
+
+/* ----------------------------------------------------------------------------
+   Reset
+---------------------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { -webkit-text-size-adjust: 100%; }
+html, body { min-height: 100%; }
+
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--family-latin), var(--family-cjk);
+  font-size: var(--text-body);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-loose);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  overflow-x: hidden;
+}
+
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+input { font: inherit; color: inherit; background: none; border: 0; outline: 0; width: 100%; }
+
+::selection { background: var(--color-fg); color: var(--color-bg); }
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ----------------------------------------------------------------------------
+   Page chrome
+---------------------------------------------------------------------------- */
+.page {
+  width: 100%;
+  max-width: var(--max-w-lg);
+  margin-inline: auto;
+  padding: var(--space-5) var(--space-6);
+  display: flex;
+  flex-direction: column;
+}
+
+.rule { height: 1px; border: 0; background: var(--color-border); width: 100%; }
+.rule--head    { margin-block: var(--space-4) 0; }
+.rule--footer  { margin-block: var(--space-6) var(--space-3); }
+
+.masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--family-mono);
+  font-size: var(--text-caption);
+  letter-spacing: 0.12em;
+  padding-block: var(--space-3) var(--space-4);
+}
+.masthead__label  { font-weight: var(--weight-medium); color: var(--color-fg); }
+.masthead__locale { color: var(--color-fg-muted); letter-spacing: 0.08em; }
+
+/* ----------------------------------------------------------------------------
+   Composition — Layered Overlap stage for the postcard
+---------------------------------------------------------------------------- */
+.composition {
+  position: relative;
+  margin-top: var(--space-5);
+  padding-top: var(--space-5);
+  isolation: isolate;
+  min-height: 600px;
+}
+
+/* Postcard — the editorial artifact, centered + positioning context for overlays */
+.postcard {
+  position: relative;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
+  gap: var(--space-5);
+  padding: 56px 56px 40px;
+  min-height: 520px;
+  max-width: 960px;
+  width: 100%;
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+
+.postcard__message,
+.postcard__address {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-5);
+}
+.postcard__address { padding-left: var(--space-5); }
+
+.rule--postcard {
+  width: 1px; height: auto; background: var(--color-border); align-self: stretch;
+}
+
+.label {
+  font-family: var(--family-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--color-fg-muted);
+  font-weight: var(--weight-medium);
+}
+
+.pull-quote {
+  font-family: var(--family-cjk);
+  font-size: 30px;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  color: var(--color-fg);
+  font-weight: var(--weight-regular);
+}
+
+.signature { display: flex; flex-direction: column; gap: var(--space-2); }
+.signature__rule {
+  height: 1px; width: 80px;
+  border: 0; background: var(--color-fg);
+}
+.signature__name {
+  font-family: var(--family-cjk);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  font-weight: var(--weight-medium);
+}
+
+.input { display: flex; flex-direction: column; gap: var(--space-2); }
+.input input {
+  font-family: var(--family-cjk);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  padding-block: var(--space-1);
+  border-bottom: 1px solid var(--color-fg);
+}
+.input input:focus { border-bottom-color: var(--color-accent); caret-color: var(--color-accent); }
+.input__caption {
+  font-family: var(--family-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--color-fg-muted);
+}
+
+.rule--posted { margin-top: auto; }
+
+.posted {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-top: var(--space-3);
+  font-family: var(--family-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+.posted__info { font-weight: var(--weight-medium); }
+.posted__to   { color: var(--color-accent); letter-spacing: 0.12em; font-weight: var(--weight-medium); }
+
+/* ----------------------------------------------------------------------------
+   Overlays — Layered Overlap (hero stamp + cancellation chop + margin label)
+---------------------------------------------------------------------------- */
+.overlay { position: absolute; pointer-events: none; }
+
+.overlay--hero {
+  width: 160px;
+  height: 200px;
+  background: var(--color-bg);
+  padding: 10px;
+  transform: rotate(-3deg);
+  /* aligned to card top-right interior (matches Figma after user edit) */
+  top: 0;
+  left: 776px;
+  z-index: 3;
+  transition: transform 320ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.overlay--hero__body {
+  position: relative;
+  width: 100%; height: 100%;
+  background: var(--color-fg);
+  border: 2px solid var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px;
+  color: var(--color-bg);
+}
+.overlay--hero__code {
+  font-family: var(--family-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  font-weight: var(--weight-medium);
+}
+.overlay--hero__glyph {
+  font-family: var(--family-latin);
+  font-size: 72px;
+  font-weight: var(--weight-bold);
+  line-height: 1;
+}
+.overlay--hero__denom {
+  font-family: var(--family-mono);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+}
+
+.overlay--chop {
+  width: 96px;
+  height: 96px;
+  border: 1.5px solid var(--color-accent);
+  border-radius: 999px;
+  color: var(--color-accent);
+  /* base transform — `--chop-rot` lets JS jitter the rotation on each press */
+  transform: rotate(var(--chop-rot, -10deg));
+  transform-origin: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px;
+  top: 159px;
+  left: 734px;
+  z-index: 4;
+  background: transparent;
+  transition: opacity 320ms ease-out, transform 320ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+/* Press-fresh animation — chop drops in with scale + slight overshoot, then settles */
+.overlay--chop.is-fresh {
+  animation: chop-press 460ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+@keyframes chop-press {
+  0%   { opacity: 0;   transform: rotate(var(--chop-rot, -10deg)) scale(0.4); }
+  55%  { opacity: 1;   transform: rotate(var(--chop-rot, -10deg)) scale(1.12); }
+  100% { opacity: 1;   transform: rotate(var(--chop-rot, -10deg)) scale(1); }
+}
+.chop__head {
+  font-family: var(--family-mono);
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  font-weight: var(--weight-medium);
+}
+.chop__date {
+  font-family: var(--family-mono);
+  font-size: 16px;
+  font-weight: var(--weight-bold);
+  line-height: 1;
+}
+.chop__time {
+  font-family: var(--family-mono);
+  font-size: 8px;
+  letter-spacing: 0.12em;
+}
+
+/* ----------------------------------------------------------------------------
+   Stamps section
+---------------------------------------------------------------------------- */
+.stamps {
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  align-items: center;
+}
+.stamps__label-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  width: 100%;
+}
+.rule--label { flex: 1; }
+.stamps__label {
+  font-family: var(--family-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  font-weight: var(--weight-medium);
+}
+.stamps__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5) 40px;
+  justify-content: center;
+}
+.stamps__hint {
+  font-family: var(--family-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--color-fg-muted);
+  text-align: center;
+}
+.stamps__hint kbd {
+  font: inherit;
+  border: 1px solid var(--color-border);
+  padding: 0 6px;
+  border-radius: 2px;
+  background: var(--color-bg);
+}
+
+/* Cell (a stamp button with caption below) */
+.cell {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: var(--space-1);
+  background: transparent;
+  transition: transform 180ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.cell:hover           { transform: translateY(-2px); }
+.cell:active          { transform: translateY(1px); }
+.cell:disabled        { opacity: 0.4; cursor: not-allowed; transform: none; }
+.cell__caption {
+  font-family: var(--family-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  font-weight: var(--weight-medium);
+}
+
+/* Stamp visual (Penny-Black inspired) */
+.stamp {
+  width: 88px;
+  height: 110px;
+  padding: 6px;
+  background: var(--color-bg);
+  display: block;
+  transition: background 180ms ease-out;
+}
+.stamp__body {
+  width: 100%; height: 100%;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-fg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px;
+  transition: background 180ms ease-out, color 180ms ease-out, border-color 180ms ease-out;
+}
+.stamp__code, .stamp__denom {
+  font-family: var(--family-mono);
+  font-weight: var(--weight-medium);
+  white-space: nowrap;
+}
+.stamp__code  { font-size: 9px; letter-spacing: 0.12em; }
+.stamp__denom { font-size: 7px; letter-spacing: 0.06em; font-weight: var(--weight-regular); }
+.stamp__glyph {
+  font-family: var(--family-latin);
+  font-size: 32px;
+  font-weight: var(--weight-bold);
+  line-height: 1;
+}
+
+/* Hover state — 印泥下沉 ink press */
+.cell:hover .stamp,
+.cell:focus-visible .stamp {
+  background: var(--color-fg);
+}
+.cell:hover .stamp__body,
+.cell:focus-visible .stamp__body {
+  background: var(--color-fg);
+  color: var(--color-bg);
+}
+
+/* Press animation — used by JS on click */
+.cell.is-pressing .stamp { transform: scale(0.94); transition: transform 120ms ease-in; }
+.cell.is-pressing .stamp__body { background: var(--color-fg); color: var(--color-bg); }
+
+/* Active state — the most-recently-pressed stamp (replaces the old "is-posted") */
+.cell.is-active .stamp { background: var(--color-fg); }
+.cell.is-active .stamp__body { background: var(--color-fg); color: var(--color-bg); border-color: var(--color-fg); }
+
+/* ----------------------------------------------------------------------------
+   Footplate (no date / time — those live only on the postcard)
+---------------------------------------------------------------------------- */
+.footplate { margin-top: auto; padding-top: var(--space-6); }
+.footplate__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  font-family: var(--family-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+}
+.footplate__signature { font-family: var(--family-cjk); font-weight: var(--weight-medium); letter-spacing: 0.08em; }
+.footplate__caption   { color: var(--color-fg-muted); font-size: 10px; letter-spacing: 0.06em; font-weight: var(--weight-regular); }
+
+/* ----------------------------------------------------------------------------
+   Responsive — 768 (tablet collapse) + 375 (mobile reflow)
+---------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .overlay--hero { right: 0; }
+}
+
+@media (max-width: 768px) {
+  .page { padding: var(--space-4); overflow-x: hidden; }
+  .composition { padding-top: var(--space-4); margin-top: var(--space-4); }
+  .postcard {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    padding-top: 96px; /* leave room for hero stamp anchored top-right */
+    min-height: 0;
+  }
+  .postcard__address { padding-left: 0; }
+  .rule--postcard { width: 100%; height: 1px; }
+  .pull-quote { font-size: 20px; line-height: 1.4; }
+  .input input { font-size: 18px; }
+  .posted { flex-direction: column; align-items: flex-start; gap: var(--space-1); }
+
+  /* Mobile overlays — fully contained inside the postcard (no viewport overflow) */
+  .overlay--hero {
+    width: 72px; height: 92px;
+    top: 12px;
+    right: 12px;
+    left: auto;
+    padding: 4px;
+  }
+  .overlay--hero__body { padding: 5px; border-width: 1.5px; }
+  .overlay--hero__code  { font-size: 7px; letter-spacing: 0.1em; }
+  .overlay--hero__glyph { font-size: 30px; }
+  .overlay--hero__denom { font-size: 5px; letter-spacing: 0.08em; }
+
+  .overlay--chop {
+    width: 52px; height: 52px;
+    top: 84px;
+    right: 56px;
+    left: auto;
+    padding: 4px;
+  }
+  .chop__head { font-size: 5px; letter-spacing: 0.16em; }
+  .chop__date { font-size: 9px; }
+  .chop__time { font-size: 5px; letter-spacing: 0.1em; }
+
+  .stamps__row {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    justify-content: center;
+    gap: var(--space-5) var(--space-4);
+  }
+  .footplate__row { flex-direction: column; align-items: flex-start; gap: var(--space-2); }
+  .footplate__caption { font-size: 9px; }
+}
+
+@media (max-width: 480px) {
+  .masthead {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   Reduced motion — honor user preference
+---------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

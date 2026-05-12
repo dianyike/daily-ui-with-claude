@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daily UI 010 — Social Share · 明信片郵戳</title>
+  <meta name="description" content="Daily UI 010 — Social Share as a postcard mail ritual. Pick a stamp, press it, mail it out." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+
+    <header class="masthead">
+      <span class="masthead__label">010 / SOCIAL SHARE</span>
+      <span class="masthead__locale">POSTCARD MAIL · 明信片郵戳 · TW</span>
+    </header>
+    <hr class="rule rule--head" aria-hidden="true" />
+
+    <main class="composition" id="composition">
+
+      <article class="postcard" aria-label="Postcard preview">
+        <section class="postcard__message">
+          <p class="label">01&nbsp;&nbsp;寄件人 ── SENDER</p>
+          <blockquote class="pull-quote">
+            「為你看到的東西<br />
+            按一下印戳。<br />
+            把好東西<br />
+            放出去。」
+          </blockquote>
+          <div class="signature">
+            <hr class="signature__rule" aria-hidden="true" />
+            <p class="signature__name">Studio Dianyi&nbsp;&nbsp;·&nbsp;&nbsp;典億工作室</p>
+          </div>
+        </section>
+
+        <hr class="rule rule--postcard" aria-hidden="true" />
+
+        <section class="postcard__address">
+          <p class="label">02&nbsp;&nbsp;收件人 ── RECIPIENT</p>
+          <label class="input">
+            <input
+              id="recipient"
+              type="text"
+              value="親愛的讀者"
+              spellcheck="false"
+              autocomplete="off"
+              aria-label="Recipient handle or name"
+            />
+            <span class="input__caption">ANYONE WHO READS THIS — type or paste a handle</span>
+          </label>
+
+          <hr class="rule rule--posted" aria-hidden="true" />
+          <div class="posted">
+            <span class="posted__info" id="postedInfo">POSTED · DI-010 · 2026.05.12 · 14:22</span>
+            <span class="posted__to" id="postedTo">→ X · TWITTER</span>
+          </div>
+        </section>
+
+      <div class="overlay overlay--hero" id="heroStamp" aria-hidden="true">
+        <div class="overlay--hero__body">
+          <span class="overlay--hero__code" id="heroCode">X · TWITTER</span>
+          <span class="overlay--hero__glyph" id="heroGlyph">X</span>
+          <span class="overlay--hero__denom">010 · DAILY UI · 2026</span>
+        </div>
+      </div>
+
+      <div class="overlay overlay--chop" id="chop" aria-hidden="true">
+        <span class="chop__head">POSTED</span>
+        <span class="chop__date" id="chopDate">05.12</span>
+        <span class="chop__time" id="chopTime">14:22 · TW</span>
+      </div>
+
+      </article>
+    </main>
+
+    <section class="stamps" aria-label="Pick a stamp to mail">
+      <div class="stamps__label-row">
+        <hr class="rule rule--label" aria-hidden="true" />
+        <p class="stamps__label">STAMPS&nbsp;&nbsp;·&nbsp;&nbsp;選一枚寄出&nbsp;&nbsp;·&nbsp;&nbsp;PICK ONE TO MAIL</p>
+        <hr class="rule rule--label" aria-hidden="true" />
+      </div>
+      <div class="stamps__row" id="stampsRow" role="radiogroup" aria-label="Mail channels">
+        <button class="cell" data-channel="X"        data-code="X"  data-glyph="X" data-name="TWITTER">
+          <span class="stamp"><span class="stamp__body"><span class="stamp__code">X</span><span class="stamp__glyph">X</span><span class="stamp__denom">010 · DAILY UI</span></span></span>
+          <span class="cell__caption">TWITTER</span>
+        </button>
+        <button class="cell" data-channel="FB"       data-code="FB" data-glyph="f" data-name="FACEBOOK">
+          <span class="stamp"><span class="stamp__body"><span class="stamp__code">FB</span><span class="stamp__glyph">f</span><span class="stamp__denom">010 · DAILY UI</span></span></span>
+          <span class="cell__caption">FACEBOOK</span>
+        </button>
+        <button class="cell" data-channel="IG"       data-code="IG" data-glyph="◯" data-name="INSTAGRAM">
+          <span class="stamp"><span class="stamp__body"><span class="stamp__code">IG</span><span class="stamp__glyph">◯</span><span class="stamp__denom">010 · DAILY UI</span></span></span>
+          <span class="cell__caption">INSTAGRAM</span>
+        </button>
+        <button class="cell" data-channel="LINE"     data-code="LI" data-glyph="L" data-name="LINE">
+          <span class="stamp"><span class="stamp__body"><span class="stamp__code">LI</span><span class="stamp__glyph">L</span><span class="stamp__denom">010 · DAILY UI</span></span></span>
+          <span class="cell__caption">LINE</span>
+        </button>
+        <button class="cell" data-channel="EMAIL"    data-code="@"  data-glyph="@" data-name="EMAIL">
+          <span class="stamp"><span class="stamp__body"><span class="stamp__code">@</span><span class="stamp__glyph">@</span><span class="stamp__denom">010 · DAILY UI</span></span></span>
+          <span class="cell__caption">EMAIL</span>
+        </button>
+        <button class="cell" data-channel="LINK"     data-code="∞"  data-glyph="∞" data-name="LINK">
+          <span class="stamp"><span class="stamp__body"><span class="stamp__code">∞</span><span class="stamp__glyph">∞</span><span class="stamp__denom">010 · DAILY UI</span></span></span>
+          <span class="cell__caption">LINK</span>
+        </button>
+      </div>
+      <p class="stamps__hint" aria-live="polite" id="stampHint">
+        點選一枚郵戳寄出，或鍵盤 <kbd>Tab</kbd> 切換、<kbd>Enter</kbd> 壓印。
+      </p>
+    </section>
+
+    <footer class="footplate">
+      <hr class="rule rule--footer" aria-hidden="true" />
+      <div class="footplate__row">
+        <span class="footplate__signature">STUDIO DIANYI · 典億工作室</span>
+        <span class="footplate__caption">perforated edge · single-color print · postal stamps</span>
+        <span class="footplate__stats" id="footStats">STAMPS REGISTERED&nbsp;&nbsp;06 / 06</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily UI 008 — 404 · 一場小型走失</title>
+  <meta name="description" content="Daily UI 008 — 404 Page。四格漫畫敘事 click → fall → wander → home，把『找不到頁面』改寫成一場小型走失的時序故事。" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="sr-only skip" href="#main">略過導覽 · Skip to content</a>
+
+  <div class="page">
+  <header class="plate" role="banner">
+    <span class="plate__left">DAILY 008 · LOST DOCUMENT · 一場小型走失</span>
+    <span class="plate__right">
+      <time datetime="2026-05-12">2026/05/12</time> · TAIPEI · 25.0330° N
+    </span>
+    <button class="theme-toggle" type="button" aria-label="切換亮 / 暗主題" data-theme-toggle>
+      <span aria-hidden="true" data-theme-icon>◐</span>
+    </button>
+  </header>
+  <hr class="hairline" />
+
+  <main id="main">
+
+    <section class="hero" aria-labelledby="hero-h1">
+      <p class="eyebrow">BEAT 01 · A SMALL DISAPPEARANCE · 一場小型走失</p>
+      <h1 id="hero-h1" class="hero__title">找不到這一頁<span class="hero__period">。</span></h1>
+      <p class="hero__subtitle">但這四格漫畫剛好能把你帶回去。往下捲。</p>
+    </section>
+
+    <section class="strip" aria-label="四格漫畫:click → fall → wander → home">
+      <!-- ─────── Panel 01 — CLICK ─────── -->
+      <article class="panel" data-panel="01">
+        <header class="panel__head">
+          <span class="panel__num">01 / CLICK</span>
+          <span class="panel__dot" aria-hidden="true"></span>
+        </header>
+        <div class="panel__illustration">
+          <img src="assets/panel-01-click.png" alt="一個簡筆角色伸手按下標示 GO 的按鈕" loading="lazy" />
+        </div>
+        <div class="panel__caption">
+          <p class="panel__cap-en">[ click ]</p>
+          <p class="panel__cap-zh">按下了那個按鈕</p>
+        </div>
+      </article>
+
+      <!-- ─────── Panel 02 — FALL ─────── -->
+      <article class="panel" data-panel="02">
+        <header class="panel__head">
+          <span class="panel__num">02 / FALL</span>
+          <span class="panel__dot" aria-hidden="true"></span>
+        </header>
+        <div class="panel__illustration">
+          <img src="assets/panel-02-fall.png" alt="角色頭朝下墜落,周圍是速度線,旁邊一個咚字音效" loading="lazy" />
+        </div>
+        <div class="panel__caption">
+          <p class="panel__cap-en">[ fall ]</p>
+          <p class="panel__cap-zh">掉進了縫隙之間</p>
+        </div>
+      </article>
+
+      <!-- ─────── Panel 03 — WANDER ─────── -->
+      <article class="panel" data-panel="03">
+        <header class="panel__head">
+          <span class="panel__num">03 / WANDER</span>
+          <span class="panel__dot" aria-hidden="true"></span>
+        </header>
+        <div class="panel__illustration">
+          <img src="assets/panel-03-wander.png" alt="角色走在空白裡,身後一串漸淡的足跡點,頭上一個問號" loading="lazy" />
+        </div>
+        <div class="panel__caption">
+          <p class="panel__cap-en">[ wander ]</p>
+          <p class="panel__cap-zh">這裡⋯⋯ 沒有東西</p>
+        </div>
+      </article>
+
+      <!-- ─────── Panel 04 — HOME ─────── -->
+      <article class="panel panel--accent" data-panel="04">
+        <header class="panel__head">
+          <span class="panel__num">04 / HOME</span>
+          <span class="panel__dot panel__dot--accent" aria-hidden="true"></span>
+        </header>
+        <div class="panel__illustration">
+          <img src="assets/panel-04-home.png" alt="角色舉起橘色手臂指向右方,三道箭頭引向首頁" loading="lazy" />
+        </div>
+        <div class="panel__caption">
+          <p class="panel__cap-en">[ home ]</p>
+          <p class="panel__cap-zh">我帶你回去</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-h">
+      <h2 id="cta-h" class="sr-only">重新定位 · 回到首頁</h2>
+      <a class="cta__primary" href="/" data-cta-primary>
+        <span class="cta__arrow" aria-hidden="true">→</span>
+        <span class="cta__label">重新定位 · 回到首頁</span>
+      </a>
+      <p class="cta__hint" aria-hidden="true">ENTER · OR · CLICK</p>
+
+      <div class="cta__secondary">
+        <a class="cta__link" href="/search">或 — 開啟搜尋 <span aria-hidden="true">→</span></a>
+        <a class="cta__link" href="/report">回報這個失蹤路徑 <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+  </main>
+
+  <hr class="hairline hairline--prefooter" />
+  <footer class="footer" role="contentinfo">
+    <span class="footer__col">ERROR · 404 · DOC NOT FOUND</span>
+    <span class="footer__col">REQUEST-ID · 7c9-A0F-2F</span>
+    <span class="footer__col">SIGNAL · OK · ROUND-TRIP 38ms</span>
+    <span class="footer__col">ATTEMPT · 1 / RECOVERY · READY</span>
+  </footer>
+  </div><!-- /.page -->
+
+  <script src="script.js" defer></script>
+</body>
+</html>

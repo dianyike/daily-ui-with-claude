@@ -12,7 +12,9 @@
 |---|---|---|---|
 | 001 | Sign Up | Atmospheric Photo-Led + Editorial Manuscript（左 cinematic 媒體 + 右編輯式表單） | [`41:15`](https://www.figma.com/design/bDA9MWzNRM9My6grhlE8fj/daily-UI-100?node-id=41-15) |
 | 002 | Credit Card Checkout | Vault / Mechanical（單欄編輯文件 + dial-window 卡號 + Hold-to-Authorise） | [`54:6`](https://www.figma.com/design/bDA9MWzNRM9My6grhlE8fj/daily-UI-100?node-id=54-6) |
-| 003 – 100 | … | 進行中 | — |
+| 004 | Calculator | Kinetic Tape Stream — Brew Log（橫向紙帶歷史 + 選中列 outline+◉+✓ + r=1.38 serif moment） | [`69:2`](https://www.figma.com/design/bDA9MWzNRM9My6grhlE8fj/daily-UI-100?node-id=69-2) |
+| 005 | App Icon | Tide · 潮汐記號（深底 page + Light-mode override icon canvas + 3 件幾何 horizon/17 sine dots/anchor + 7 級多尺度條） | [`83:2`](https://www.figma.com/design/bDA9MWzNRM9My6grhlE8fj/daily-UI-100?node-id=83-2) |
+| 003 · 006 – 100 | … | 進行中 | — |
 
 ---
 
@@ -79,6 +81,8 @@ Frame 命名慣例：`Daily 001 — Sign Up - 1440`、`Daily 002 — Credit Card
 |---|---|---|
 | 001 | Mirrored chapter-prefix rhetoric（左 `DAILY UI ／ 001` + 右 `01 ／ 開立帳號`） | 任何媒體 panel + 表單 panel 並置的編輯式 conversion 頁面 |
 | 002 | N-scale 編號 echo（plate / receipt / footer / 詩意位置 四尺度） · Dial-window slot 替代平鋪 input · Centered CTA cluster | 高金額 conversion 終點 / 有可炫耀編號（edition / batch / cask）/ 需要 ceremonial 而非 functional moment-form |
+| 004 | History-as-protagonist Tape Ribbon · Selection-by-marking（outline + ◉ + ✓）取代字級跳級 · N-scale `r 1.38` 五尺度 echo · Single-field setRangeFontSize 數值+單位 | 迭代歷史 + 從候選中認證一個（試色 / 試樣 / variant ranking / 選 master take）/ 結果不需重新計算只需挑出一個存檔的場景 |
+| 005 | Brand-mark-as-Typographic-Hero protagonist · Dark page + Light-mode override child icon canvas（同樹雙模式對比）· 多尺度 strip + 階梯式 dot-count 退化 self-prove 5px 生存 · Accent uniqueness 用 conceptual location 定義（page chrome 0 accent） | 任何 brand identity reveal / design asset 多尺度生存證明 / "page 物質 vs object 物質" 雙層對比 / speculative design 虛構物 discoverable-as-real |
 
 ---
 

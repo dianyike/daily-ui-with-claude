@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily UI 004 — 萃取日誌 N°004 · Brew Log Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="brewlog" aria-labelledby="brewlog-title">
+
+    <header class="plate" aria-label="Brew log header plate">
+      <p class="plate-left">BREW&nbsp;LOG&nbsp;&nbsp;·&nbsp;&nbsp;V60&nbsp;&nbsp;·&nbsp;&nbsp;2026—05—12&nbsp;&nbsp;·&nbsp;&nbsp;<span id="plate-ratio">r&nbsp;1.38</span></p>
+      <p class="plate-right" id="plate-time">TUESDAY&nbsp;&nbsp;·&nbsp;&nbsp;09⁻47</p>
+    </header>
+
+    <hr class="hairline" aria-hidden="true">
+
+    <section class="hero" aria-label="Title">
+      <h1 id="brewlog-title" class="title">萃取日誌&nbsp;N°004</h1>
+      <p class="caption">今晨第五杯，才得到那一杯。</p>
+      <p class="tape-eyebrow">TAPE&nbsp;&nbsp;—&nbsp;&nbsp;FIVE&nbsp;&nbsp;TRIALS,&nbsp;&nbsp;ONE&nbsp;&nbsp;STOOD&nbsp;&nbsp;UP</p>
+    </section>
+
+    <section class="tape" aria-label="Brew trial history tape" id="tape">
+      <div class="tickmarks tickmarks-top" aria-hidden="true"></div>
+
+      <ul class="tape-rows" role="listbox" aria-label="Trial rows — click to select" tabindex="0">
+        <li class="tape-row"
+            role="option"
+            tabindex="0"
+            data-dose="17" data-yield="255" data-time="2:35" data-ratio="1.41" data-mark="—" data-status="—"
+            aria-selected="false">
+          <span class="row-dot" aria-hidden="true"></span>
+          <span class="row-idx">01</span>
+          <span class="row-col">17g&nbsp;&nbsp;→&nbsp;&nbsp;255g</span>
+          <span class="row-col">2:35</span>
+          <span class="row-col">r&nbsp;1.41</span>
+          <span class="row-mark">—</span>
+        </li>
+        <li class="tape-row"
+            role="option"
+            tabindex="0"
+            data-dose="18" data-yield="270" data-time="2:40" data-ratio="1.32" data-mark="✘" data-status="OVER"
+            aria-selected="false">
+          <span class="row-dot" aria-hidden="true"></span>
+          <span class="row-idx">02</span>
+          <span class="row-col">18g&nbsp;&nbsp;→&nbsp;&nbsp;270g</span>
+          <span class="row-col">2:40</span>
+          <span class="row-col">r&nbsp;1.32</span>
+          <span class="row-mark">✘</span>
+        </li>
+        <li class="tape-row"
+            role="option"
+            tabindex="0"
+            data-dose="16" data-yield="256" data-time="2:28" data-ratio="1.36" data-mark="—" data-status="—"
+            aria-selected="false">
+          <span class="row-dot" aria-hidden="true"></span>
+          <span class="row-idx">03</span>
+          <span class="row-col">16g&nbsp;&nbsp;→&nbsp;&nbsp;256g</span>
+          <span class="row-col">2:28</span>
+          <span class="row-col">r&nbsp;1.36</span>
+          <span class="row-mark">—</span>
+        </li>
+        <li class="tape-row is-selected"
+            role="option"
+            tabindex="0"
+            data-dose="17" data-yield="272" data-time="2:30" data-ratio="1.38" data-mark="✓" data-status="STOOD UP"
+            aria-selected="true">
+          <span class="row-dot" aria-hidden="true"></span>
+          <span class="row-idx">04</span>
+          <span class="row-col">17g&nbsp;&nbsp;→&nbsp;&nbsp;272g</span>
+          <span class="row-col">2:30</span>
+          <span class="row-col">r&nbsp;1.38</span>
+          <span class="row-mark">✓</span>
+        </li>
+        <li class="tape-row"
+            role="option"
+            tabindex="0"
+            data-dose="17" data-yield="280" data-time="2:32" data-ratio="1.41" data-mark="—" data-status="—"
+            aria-selected="false">
+          <span class="row-dot" aria-hidden="true"></span>
+          <span class="row-idx">05</span>
+          <span class="row-col">17g&nbsp;&nbsp;→&nbsp;&nbsp;280g</span>
+          <span class="row-col">2:32</span>
+          <span class="row-col">r&nbsp;1.41</span>
+          <span class="row-mark">—</span>
+        </li>
+      </ul>
+
+      <div class="tickmarks tickmarks-bot" aria-hidden="true"></div>
+    </section>
+
+    <section class="selected-trial" aria-label="Selected trial parameters">
+      <p class="selected-eyebrow">
+        SELECTED&nbsp;&nbsp;·&nbsp;&nbsp;TRIAL&nbsp;<span id="sel-idx">04</span>&nbsp;&nbsp;·&nbsp;&nbsp;<span id="sel-dose-yield">17&nbsp;:&nbsp;272</span>&nbsp;&nbsp;·&nbsp;&nbsp;<span id="sel-ratio-eb">r&nbsp;1.38</span>
+      </p>
+      <div class="cards" role="group" aria-label="Trial parameters">
+        <article class="card" aria-label="Dose">
+          <p class="card-label">DOSE</p>
+          <p class="card-value"><span id="val-dose">17</span><span class="card-unit">&nbsp;g</span></p>
+          <p class="card-sub">豆量</p>
+        </article>
+        <article class="card" aria-label="Yield">
+          <p class="card-label">YIELD</p>
+          <p class="card-value"><span id="val-yield">272</span><span class="card-unit">&nbsp;g</span></p>
+          <p class="card-sub">萃出</p>
+        </article>
+        <article class="card" aria-label="Time">
+          <p class="card-label">TIME</p>
+          <p class="card-value"><span id="val-time">2:30</span><span class="card-unit">&nbsp;min</span></p>
+          <p class="card-sub">時間</p>
+        </article>
+        <article class="card" aria-label="Temperature">
+          <p class="card-label">TEMP</p>
+          <p class="card-value"><span id="val-temp">93</span><span class="card-unit">&nbsp;°C</span></p>
+          <p class="card-sub">水溫</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="result" aria-label="Computed result">
+      <div class="result-main">
+        <span class="r-prefix" aria-hidden="true">r</span>
+        <span class="r-equal" aria-hidden="true">=</span>
+        <span class="r-value" id="r-value">1.38</span>
+      </div>
+      <dl class="result-support">
+        <div class="support-row"><dt>RATIO</dt><dd><span id="sup-ratio">1&nbsp;:&nbsp;16</span></dd></div>
+        <div class="support-row"><dt>YIELD</dt><dd><span id="sup-yield">1.38&nbsp;×</span></dd></div>
+        <div class="support-row"><dt>STATUS</dt><dd><span id="sup-status">STOOD UP</span></dd></div>
+      </dl>
+    </section>
+
+    <hr class="hairline" aria-hidden="true">
+
+    <div class="cta-wrap">
+      <button type="button" class="cta" id="cta-save"
+              aria-label="存為配方 Recipe 04 — save selected trial">
+        <span class="cta-cjk">存為配方</span>
+        <span class="cta-dot" aria-hidden="true"></span>
+        <span class="cta-chrome">RECIPE&nbsp;&nbsp;<span id="cta-idx">04</span>&nbsp;&nbsp;<span class="cta-arrow" aria-hidden="true">→</span></span>
+      </button>
+    </div>
+
+    <hr class="hairline" aria-hidden="true">
+
+    <footer class="chrome" aria-label="Brew log chrome">
+      <span class="chrome-item">BREW&nbsp;LOG&nbsp;&nbsp;N°004</span>
+      <span class="chrome-item">BARISTA&nbsp;&nbsp;·&nbsp;&nbsp;典億</span>
+      <span class="chrome-item">METHOD&nbsp;&nbsp;·&nbsp;&nbsp;V60-02</span>
+      <span class="chrome-item">PAPER&nbsp;&nbsp;·&nbsp;&nbsp;HARIO&nbsp;STD</span>
+    </footer>
+
+  </main>
+
+  <div class="aria-live" aria-live="polite" id="aria-live"></div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily UI 007 — Settings · Account Ledger</title>
+  <meta name="description" content="Daily UI 007 — 雙欄記帳本式偏好頁;dot-leader 串連 label→value,三章節 + Apply 簽署。" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&family=Inter:wght@400;500;700&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@300&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="sr-only skip" href="#main">Skip to content</a>
+
+  <header class="plate" role="banner">
+    <span class="plate__left">SETTINGS — 偏好設定</span>
+    <span class="plate__right">DAILY UI · 007</span>
+  </header>
+  <hr class="hairline" />
+
+  <main id="main" class="ledger">
+
+    <section class="hero-title" aria-labelledby="hero-h1">
+      <p class="eyebrow">FOR THE SUBSCRIBER OF — 訂閱者偏好帳冊</p>
+      <h1 id="hero-h1">Account Ledger.</h1>
+      <p class="intro">
+        Three chapters — Account, Reading, Delivery. Each line below records one preference;
+        the dot-leader joins what you call it to what it is. Review and apply.
+      </p>
+    </section>
+
+    <!-- Section I -->
+    <section class="ledger-section" aria-labelledby="sec-1">
+      <h2 class="section-eyebrow" id="sec-1">
+        <span class="section-eyebrow__roman" aria-hidden="true">I</span>
+        <span class="section-eyebrow__name">ACCOUNT — 帳戶</span>
+      </h2>
+      <hr class="hairline" />
+      <dl class="rows">
+        <div class="row">
+          <dt class="row__label">Display name</dt>
+          <span class="row__leader" aria-hidden="true"></span>
+          <dd class="row__value">Chen, Yi-Hsuan</dd>
+        </div>
+        <div class="row">
+          <dt class="row__label">Email</dt>
+          <span class="row__leader" aria-hidden="true"></span>
+          <dd class="row__value">yh.chen@***.tw</dd>
+        </div>
+        <div class="row">
+          <dt class="row__label">Subscription</dt>
+          <span class="row__leader" aria-hidden="true"></span>
+          <dd class="row__value">Annual &mdash; Editorial Tier</dd>
+        </div>
+        <div class="row">
+          <dt class="row__label">Member since</dt>
+          <span class="row__leader" aria-hidden="true"></span>
+          <dd class="row__value"><time datetime="2021-03">2021.03</time></dd>
+        </div>
+      </dl>
+      <p class="margin-note">
+        Identity and access &mdash; what we call you, where we send things, and the tier you keep.
+      </p>
+    </section>
+
+    <!-- Section II -->
+    <section class="ledger-section" aria-labelledby="sec-2">
+      <h2 class="section-eyebrow" id="sec-2">
+        <span class="section-eyebrow__roman" aria-hidden="true">II</span>
+        <span class="section-eyebrow__name">READING — 閱讀</span>
+      </h2>
+      <hr class="hairline" />
+      <dl class="rows">
+        <div class="row">
+          <dt class="row__label">Theme</dt>
+          <span class="row__leader" aria-hidden="true"></span>
+          <dd class="row__value">Light&nbsp; (auto after 21:00)</dd>
+        </div>
+        <div class="row">
+          <dt class="row__label">Type size</dt>
+          <span class="row__leader" aria-hidden="true"></span>
+          <dd class="row__value">Regular &mdash; 16 / 27</dd>
+        </div>
+        <div class="row">
+          <dt class="row__label">Language</dt>
+          <span class="row__leader" aria-hidden="true"></span>
+          <dd class="row__value" lang="zh-Hant">繁體中文</dd>
+        </div>
+        <div class="row">
+          <dt class="row__label">Reading log</dt>
+          <span class="row__leader" aria-hidden="true"></span>
+          <dd class="row__value">On &mdash; visible in profile</dd>
+        </div>
+      </dl>
+      <p class="margin-note">
+        How the page reads, in what tongue, and whether your time spent is yours alone to see.
+      </p>
+    </section>
+
+    <!-- Section III -->
+    <section class="ledger-section" aria-labelledby="sec-3">
+      <h2 class="section-eyebrow" id="sec-3">
+        <span class="section-eyebrow__roman" aria-hidden="true">III</span>
+        <span class="section-eyebrow__name">DELIVERY — 配送</span>
+      </h2>
+      <hr class="hairline" />
+      <dl class="rows">
+        <div class="row">
+          <dt class="row__label">Frequency</dt>
+          <span class="row__leader" aria-hidden="true"></span>
+          <dd class="row__value">Weekly digest &mdash; Friday morning</dd>
+        </div>
+        <div class="row">
+          <dt class="row__label">Channels</dt>
+          <span class="row__leader" aria-hidden="true"></span>
+          <dd class="row__value">Email &middot; Push</dd>
+        </div>
+        <div class="row">
+          <dt class="row__label">Quiet hours</dt>
+          <span class="row__leader" aria-hidden="true"></span>
+          <dd class="row__value">22:30 &mdash; 07:00</dd>
+        </div>
+        <div class="row">
+          <dt class="row__label">Time zone</dt>
+          <span class="row__leader" aria-hidden="true"></span>
+          <dd class="row__value">GMT+8&nbsp; Asia / Taipei</dd>
+        </div>
+      </dl>
+      <p class="margin-note">
+        When the post arrives, by what road, and during which hours of silence.
+      </p>
+    </section>
+
+  </main>
+
+  <hr class="hairline" />
+  <footer class="footer" role="contentinfo">
+    <div class="audit">
+      <p class="audit__label">LAST REVIEWED</p>
+      <p class="audit__value">
+        <time datetime="2026-05-12">2026.05.12</time>
+        <span class="dot-sep" aria-hidden="true">&middot;</span>
+        3 entries changed since <time datetime="2026-04-28">2026.04.28</time>
+      </p>
+    </div>
+    <div class="ctas">
+      <button class="btn btn--ghost" type="button">RESTORE DEFAULTS</button>
+      <button class="btn btn--apply" type="submit">
+        APPLY CHANGES
+        <span class="dot-sep" aria-hidden="true">&middot;</span>
+        <span lang="zh-Hant">簽署</span>
+      </button>
+    </div>
+  </footer>
+
+  <p class="sr-only" aria-live="polite" id="status"></p>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

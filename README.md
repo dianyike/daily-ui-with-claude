@@ -14,7 +14,9 @@
 | 002 | Credit Card Checkout | Vault / Mechanical（單欄編輯文件 + dial-window 卡號 + Hold-to-Authorise） | [`54:6`](https://www.figma.com/design/bDA9MWzNRM9My6grhlE8fj/daily-UI-100?node-id=54-6) |
 | 004 | Calculator | Kinetic Tape Stream — Brew Log（橫向紙帶歷史 + 選中列 outline+◉+✓ + r=1.38 serif moment） | [`69:2`](https://www.figma.com/design/bDA9MWzNRM9My6grhlE8fj/daily-UI-100?node-id=69-2) |
 | 005 | App Icon | Tide · 潮汐記號（深底 page + Light-mode override icon canvas + 3 件幾何 horizon/17 sine dots/anchor + 7 級多尺度條） | [`83:2`](https://www.figma.com/design/bDA9MWzNRM9My6grhlE8fj/daily-UI-100?node-id=83-2) |
-| 003 · 006 – 100 | … | 進行中 | — |
+| 006 | User Profile | Ticker Biography — 編年人物特寫（左彩色 editorial portrait + 右橫向時間軸 4 節點 + NOW ◉ 唯一 accent + EB Garamond Italic pull quote） | [`91:2`](https://www.figma.com/design/bDA9MWzNRM9My6grhlE8fj/daily-UI-100?node-id=91-2) |
+| 007 | Settings | Account Ledger — 雙欄記帳本（dot-leader 點線串連 label→value · Roman I/II/III 章節 · 每節 EB Garamond Italic margin note · Apply「簽署」CTA 唯一 accent） | [`107:2`](https://www.figma.com/design/bDA9MWzNRM9My6grhlE8fj/daily-UI-100?node-id=107-2) |
+| 003 · 008 – 100 | … | 進行中 | — |
 
 ---
 
@@ -83,6 +85,8 @@ Frame 命名慣例：`Daily 001 — Sign Up - 1440`、`Daily 002 — Credit Card
 | 002 | N-scale 編號 echo（plate / receipt / footer / 詩意位置 四尺度） · Dial-window slot 替代平鋪 input · Centered CTA cluster | 高金額 conversion 終點 / 有可炫耀編號（edition / batch / cask）/ 需要 ceremonial 而非 functional moment-form |
 | 004 | History-as-protagonist Tape Ribbon · Selection-by-marking（outline + ◉ + ✓）取代字級跳級 · N-scale `r 1.38` 五尺度 echo · Single-field setRangeFontSize 數值+單位 | 迭代歷史 + 從候選中認證一個（試色 / 試樣 / variant ranking / 選 master take）/ 結果不需重新計算只需挑出一個存檔的場景 |
 | 005 | Brand-mark-as-Typographic-Hero protagonist · Dark page + Light-mode override child icon canvas（同樹雙模式對比）· 多尺度 strip + 階梯式 dot-count 退化 self-prove 5px 生存 · Accent uniqueness 用 conceptual location 定義（page chrome 0 accent） | 任何 brand identity reveal / design asset 多尺度生存證明 / "page 物質 vs object 物質" 雙層對比 / speculative design 虛構物 discoverable-as-real |
+| 006 | Portrait-as-anchor + 軌跡橫向延伸 雙主體版式 · 時間單向性用「過去 outline ● → NOW solid ◉」填色狀態切換 · 真實 metadata（Joined / Based）取代 cosplay 座標 · imageFilters saturation 微調 editorial（zh-TW context 永不 full b/w — feedback memory `feedback_no_bw_portraits_zh.md`） | 任何「人 × 軌跡」profile / about / team / case-study 對開頁版式 / 需要時間單向性的可視化 / 編輯式 portrait page |
+| 007 | Dot-leader 點線連接 label→value（Figma `createLine() + dashPattern [1, 5]`、web `border-bottom: dotted` + baseline 對齊）· Roman 章節編號 + Italic margin note 「編輯旁白」紀律 · Audit footer 真實 review metadata（不裝高級）· Accent atomic uses = 1（Apply 唯一)— 系列最克制 | 任何 form-as-document / 合約 / 章程 / 訂閱頁 / 設定頁 / 表格式內容需要「印刷頁」氣質而非 SaaS list 慣性 |
 
 ---
 

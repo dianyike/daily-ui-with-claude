@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily UI 006 — User Profile · 陳怡萱</title>
+  <meta name="description" content="Daily UI 006 — 雜誌人物特寫對開頁版式;portrait + biographical ticker。" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&family=Inter:wght@400;500;700&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@300&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="sr-only skip" href="#main">Skip to content</a>
+
+  <header class="plate" role="banner">
+    <span class="plate__left">PROFILE — 雜誌人物特寫</span>
+    <span class="plate__right">DAILY UI · 006</span>
+  </header>
+  <hr class="hairline" />
+
+  <main id="main" class="profile">
+
+    <section class="hero" aria-labelledby="hero-name">
+      <figure class="portrait">
+        <img
+          class="portrait__img"
+          src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1000&q=85&fm=jpg"
+          alt="陳怡萱在台北攝影棚拍攝的編輯肖像。"
+          width="420"
+          height="520"
+          loading="eager"
+        />
+        <figcaption class="portrait__caption">PHOTOGRAPHED 2026 · STUDIO TAIPEI</figcaption>
+      </figure>
+
+      <div class="hero__content">
+        <p class="eyebrow">ABOUT — 簡介</p>
+        <h1 class="hero__name-zh" id="hero-name" lang="zh-Hant">陳怡萱</h1>
+        <p class="hero__name-latin">CHEN, YI-HSUAN</p>
+        <p class="hero__role">
+          Senior Researcher
+          <span class="dot-sep" aria-hidden="true">·</span>
+          雜誌編輯
+        </p>
+
+        <hr class="hairline hairline--short" />
+
+        <dl class="metadata">
+          <div class="metadata__row">
+            <dt>JOINED</dt><dd><time datetime="2021-03">2021.03</time></dd>
+          </div>
+          <div class="metadata__row">
+            <dt>BASED</dt><dd>Taipei</dd>
+          </div>
+          <div class="metadata__row">
+            <dt>FIELD</dt><dd>Editorial / Long-form Research</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="ticker" aria-labelledby="ticker-eyebrow">
+      <p class="eyebrow" id="ticker-eyebrow">TRAJECTORY — 軌跡</p>
+
+      <ol class="ticker__track" role="list">
+        <li class="ticker__node" data-year="2021">
+          <span class="ticker__year"><time datetime="2021">2021</time></span>
+          <span class="ticker__dot" aria-hidden="true"></span>
+          <span class="ticker__title">Intern</span>
+          <span class="ticker__sub" lang="zh-Hant">研究助理</span>
+        </li>
+        <li class="ticker__node" data-year="2022">
+          <span class="ticker__year"><time datetime="2022">2022</time></span>
+          <span class="ticker__dot" aria-hidden="true"></span>
+          <span class="ticker__title">Editor</span>
+          <span class="ticker__sub" lang="zh-Hant">雜誌編輯</span>
+        </li>
+        <li class="ticker__node" data-year="2024">
+          <span class="ticker__year"><time datetime="2024">2024</time></span>
+          <span class="ticker__dot" aria-hidden="true"></span>
+          <span class="ticker__title">Lead Researcher</span>
+          <span class="ticker__sub" lang="zh-Hant">研究主任</span>
+        </li>
+        <li class="ticker__node ticker__node--now" data-year="2026" aria-current="true">
+          <span class="ticker__year"><time datetime="2026">2026</time></span>
+          <span class="ticker__dot ticker__dot--now" aria-hidden="true"></span>
+          <span class="ticker__title">
+            Editorial Prize
+            <span class="dot-sep" aria-hidden="true">·</span>
+            <span class="ticker__now">NOW</span>
+          </span>
+          <span class="ticker__sub" lang="zh-Hant">亞太編輯獎</span>
+        </li>
+      </ol>
+    </section>
+
+    <hr class="hairline" />
+
+    <section class="quote-stats">
+      <blockquote class="pullquote" aria-labelledby="quote-eyebrow">
+        <p class="eyebrow" id="quote-eyebrow">ON HER WORK</p>
+        <p class="pullquote__text">&ldquo;Quiet work, loud results.&rdquo;</p>
+      </blockquote>
+
+      <dl class="stats" aria-labelledby="stats-eyebrow">
+        <p class="eyebrow" id="stats-eyebrow">BY THE NUMBERS</p>
+        <div class="stats__row">
+          <dt class="stats__label">POSTS</dt>
+          <dd class="stats__num">42</dd>
+        </div>
+        <div class="stats__row">
+          <dt class="stats__label">AWARDS</dt>
+          <dd class="stats__num">8</dd>
+        </div>
+        <div class="stats__row">
+          <dt class="stats__label">FOLLOWING</dt>
+          <dd class="stats__num">312</dd>
+        </div>
+      </dl>
+    </section>
+
+  </main>
+
+  <hr class="hairline" />
+  <footer class="footer" role="contentinfo">
+    <span>&copy; 2026 — CHEN STUDIO</span>
+    <span>PROFILE · EDITION 06</span>
+  </footer>
+
+  <p class="sr-only aria-live" aria-live="polite" id="status"></p>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

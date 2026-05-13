@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daily UI 011 — Flash Sale / Countdown · 天文台過境倒數</title>
+  <meta name="description" content="Daily UI 011 — flash sale countdown reframed as astronomical transit observation. Orionid Meteor Shower limited handbook reservation." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+
+    <header class="nav" role="banner">
+      <span class="nav__org">奇瑞山天文台&nbsp;&nbsp;·&nbsp;&nbsp;OBS-KIRYU</span>
+      <span class="nav__coord">RA&nbsp;05<sup>h</sup>&nbsp;35<sup>m</sup>&nbsp;&nbsp;·&nbsp;&nbsp;DEC&nbsp;−05°&nbsp;23′</span>
+      <span class="nav__meta">N°&nbsp;011&nbsp;&nbsp;·&nbsp;&nbsp;2026.05.13</span>
+    </header>
+
+    <main class="hero" aria-labelledby="hero-eyebrow">
+      <p class="hero__eyebrow" id="hero-eyebrow">下次過境&nbsp;&nbsp;·&nbsp;&nbsp;NEXT TRANSIT</p>
+
+      <h1 class="hero__star" aria-live="polite" aria-atomic="true">
+        <span class="tminus__prefix">T&nbsp;−</span><span class="tminus__time" id="tminus-time" data-target="2026-11-20T20:42:00Z">
+          <span class="tminus__seg" data-unit="h">02&nbsp;H</span>
+          <span class="tminus__seg" data-unit="m">47&nbsp;M</span>
+          <span class="tminus__seg" data-unit="s">39&nbsp;S</span>
+        </span>
+      </h1>
+
+      <div class="hero__crosshair" aria-hidden="true">
+        <span class="crosshair__v"></span>
+        <span class="crosshair__h"></span>
+      </div>
+
+      <p class="hero__target-title">
+        <span class="hero__target-title-latin">ORIONID&nbsp;METEOR&nbsp;SHOWER</span>
+        <span class="hero__target-title-sep" aria-hidden="true">&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+        <span class="hero__target-title-cjk">獵戶座流星雨</span>
+      </p>
+      <p class="hero__target-time">2026.11.21&nbsp;&nbsp;04&nbsp;:&nbsp;42&nbsp;&nbsp;UTC+8</p>
+
+      <div class="trajectory" aria-hidden="true">
+        <span class="trajectory__label">現在&nbsp;&nbsp;·&nbsp;&nbsp;NOW</span>
+        <div class="trajectory__track">
+          <span class="track__seg track__seg--left"></span>
+          <span class="track__dot"></span>
+          <span class="track__seg track__seg--right"></span>
+        </div>
+      </div>
+    </main>
+
+    <section class="reservation" aria-labelledby="reserve-product">
+      <div class="reservation__col reservation__col--left">
+        <p class="reservation__eyebrow">產品&nbsp;&nbsp;·&nbsp;&nbsp;CATALOGUE</p>
+        <h2 class="reservation__product" id="reserve-product">獵戶座流星雨觀測手帳&nbsp;&nbsp;·&nbsp;&nbsp;No.&nbsp;047</h2>
+        <p class="reservation__spec">雙頁印刷&nbsp;&nbsp;·&nbsp;&nbsp;藏青布面&nbsp;&nbsp;·&nbsp;&nbsp;活字編號&nbsp;&nbsp;·&nbsp;&nbsp;2026 限定</p>
+        <p class="reservation__copy">為這場過境留下一頁安靜的記述。觀測員親筆校對，每本獨立編號。</p>
+      </div>
+
+      <div class="reservation__divider" aria-hidden="true"></div>
+
+      <div class="reservation__col reservation__col--right">
+        <p class="reservation__eyebrow">已預約&nbsp;&nbsp;·&nbsp;&nbsp;RESERVED</p>
+        <p class="reservation__capacity">
+          <span class="capacity__count">1,247</span>
+          <span class="capacity__slash" aria-hidden="true">&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+          <span class="capacity__total">2,000</span>
+        </p>
+        <p class="reservation__price">NT$&nbsp;880&nbsp;&nbsp;·&nbsp;&nbsp;單本</p>
+        <a class="cta" href="#reserve" aria-label="預約手帳，限量 2000 本，剩餘 753 本">
+          <span class="cta__label">預約手帳</span>
+          <span class="cta__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="log" aria-labelledby="log-title">
+      <p class="log__title" id="log-title">近三年觀測紀錄&nbsp;&nbsp;·&nbsp;&nbsp;RECENT&nbsp;RECORDS</p>
+      <ol class="log__list" role="list">
+        <li class="log__row">
+          <span class="log__col log__col--no">N°&nbsp;045</span>
+          <span class="log__col log__col--date">2023.10.21</span>
+          <span class="log__col log__col--zhr">ZHR&nbsp;23</span>
+          <span class="log__col log__col--cloud">雲量&nbsp;0.2</span>
+          <span class="log__col log__col--note">雲層稀疏&nbsp;&nbsp;·&nbsp;&nbsp;視寧度良</span>
+        </li>
+        <li class="log__row">
+          <span class="log__col log__col--no">N°&nbsp;046</span>
+          <span class="log__col log__col--date">2024.10.22</span>
+          <span class="log__col log__col--zhr">ZHR&nbsp;19</span>
+          <span class="log__col log__col--cloud">雲量&nbsp;0.5</span>
+          <span class="log__col log__col--note">局部雲層&nbsp;&nbsp;·&nbsp;&nbsp;視寧度中等</span>
+        </li>
+        <li class="log__row">
+          <span class="log__col log__col--no">N°&nbsp;047</span>
+          <span class="log__col log__col--date">2025.10.22</span>
+          <span class="log__col log__col--zhr">ZHR&nbsp;24</span>
+          <span class="log__col log__col--cloud">雲量&nbsp;0.1</span>
+          <span class="log__col log__col--note">清空&nbsp;&nbsp;·&nbsp;&nbsp;視寧度極佳</span>
+        </li>
+      </ol>
+    </section>
+
+    <footer class="footer" role="contentinfo">
+      <p class="footer__mark">KIRYU&nbsp;OBSERVATORY&nbsp;&nbsp;·&nbsp;&nbsp;EST.&nbsp;1962&nbsp;&nbsp;·&nbsp;&nbsp;北緯&nbsp;24°10′</p>
+      <p class="footer__nav">觀測表&nbsp;&nbsp;·&nbsp;&nbsp;月相&nbsp;&nbsp;·&nbsp;&nbsp;聯絡</p>
+    </footer>
+
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

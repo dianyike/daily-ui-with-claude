@@ -5,7 +5,7 @@
 **Hero node ID** (Plugin API form): `83:2`
 **Direction chosen**: A — Tide · 潮汐記號（虛構看潮汐 app；icon = 1 條海平線 + 17 顆 sine 曲線點 + 1 顆 accent anchor）
 **Scenario**: Tide N°005 brand mark reveal — 多尺度 icon 條（29 / 40 / 60 / 76 / 120 / 180 / 240 px）證明 5px 仍辨識
-**Web implementation**: skipped per user instruction (此題不生成代碼)
+**Web implementation**: **permanently skipped** per user instruction 2026-05-13 — App Icon 此題為純 Figma brand-mark 設計題，不生成 web/ 代碼，請勿視為待補事項
 
 ---
 

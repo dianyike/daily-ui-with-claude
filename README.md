@@ -41,7 +41,8 @@
 | 016 | Pop-Up / Overlay | [`404:55`](https://www.figma.com/design/bDA9MWzNRM9My6grhlE8fj/daily-UI-100?node-id=404-55) |
 | 017 | Email Receipt | [`436:59`](https://www.figma.com/design/bDA9MWzNRM9My6grhlE8fj/daily-UI-100?node-id=436-59) |
 | 018 | Analytics Chart | [`467:55`](https://www.figma.com/design/bDA9MWzNRM9My6grhlE8fj/daily-UI-100?node-id=467-55) |
-| 003 · 019 – 100 | 進行中 | — |
+| 019 | Leaderboard | [`503:54`](https://www.figma.com/design/bDA9MWzNRM9My6grhlE8fj/daily-UI-100?node-id=503-54) |
+| 003 · 020 – 100 | 進行中 | — |
 
 每題的詳細 brief 跟蒸餾出的機制見 `daily-XXX/notes.md` 與 `daily-XXX/takeaway.md`。
 

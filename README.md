@@ -44,7 +44,8 @@
 | 019 | Leaderboard | [`503:54`](https://www.figma.com/design/bDA9MWzNRM9My6grhlE8fj/daily-UI-100?node-id=503-54) |
 | 020 | Location Tracker | [`534:59`](https://www.figma.com/design/bDA9MWzNRM9My6grhlE8fj/daily-UI-100?node-id=534-59) |
 | 021 | Home Monitoring Dashboard | [`556:63`](https://www.figma.com/design/bDA9MWzNRM9My6grhlE8fj/daily-UI-100?node-id=556-63) |
-| 003 · 022 – 100 | 進行中 | — |
+| 022 | Search | [`576:54`](https://www.figma.com/design/bDA9MWzNRM9My6grhlE8fj/daily-UI-100?node-id=576-54) |
+| 003 · 023 – 100 | 進行中 | — |
 
 每題的詳細 brief 跟蒸餾出的機制見 `daily-XXX/notes.md` 與 `daily-XXX/takeaway.md`。
 
